@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Area Information</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap.min.css">
+
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div w3-include-html="navbar.html"></div>
+<div w3-include-html="sidebar.html"></div>
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#">
+                <em class="fa fa-home"></em>
+            </a></li>
+            <li class="active">Entry</li>
+            <li class="active">Zone Information</li>
+            <li class="active">Ward Information</li>
+            <li class="active">Area</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Area</h1>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Add Area</div>
+                <form class="form-inline text-center">
+                    <div class="form-group" style="margin-bottom: 1%">
+                        <select class="selectpicker" data-live-search="true"">
+                        <option>Zone 1</option>
+                        <option>Zone 2</option>
+                        <option>Zone 3</option>
+                        <option>Zone 4 </option>
+                        <option>Zone 5</option>
+                        <option>Zone 6</option>
+                        <option>Zone 7</option>
+                        <option>Zone 8</option>
+                        <option>Zone 9</option>
+                        <option>Zone 10</option>
+                        <option>Zone 11</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1%">
+                        <select class="selectpicker" data-live-search="true"">
+                        <option>Ward 1</option>
+                        <option>Ward 2</option>
+                        <option>Ward 3</option>
+                        <option>Ward 4 </option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-left: 8px; margin-right: 10px;">
+                        <input style="height: 35px" type="text" class="form-control" id="wardno" placeholder="Area Name">
+                    </div>
+                    <div class="form-group" style="margin-left: 8px;">
+                        <button style="margin-bottom: 1%" type="button" class="btn btn-md btn-primary">Save</button>
+                    </div>
+                </form>
+            </div><!-- /.panel-->
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Area Information
+                    <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
+                <div class="panel-body">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                        <tr>
+                            <th style="height: 10px">Zone Name</th>
+                            <th style="height: 10px">Ward Number</th>
+                            <th style="height: 10px">Number of Areas</th>
+                            <th style="height: 10px">Area Name</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Zone 1</td>
+                            <td>Ward 1</td>
+                            <td>5</td>
+                            <td>Area 1
+                                <div class="pull-right action-buttons">
+                                    <a href="road.html" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 1</td>
+                            <td>Ward 1</td>
+                            <td>5</td>
+                            <td>Area 2
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 1</td>
+                            <td>Ward 1</td>
+                            <td>5</td>
+                            <td>Area 3
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 1</td>
+                            <td>Ward 1</td>
+                            <td>5</td>
+                            <td>Area 4
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 1</td>
+                            <td>Ward 1</td>
+                            <td>5</td>
+                            <td>Area 5
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 1</td>
+                            <td>Ward 2</td>
+                            <td>3</td>
+                            <td>Area 1
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 1</td>
+                            <td>Ward 2</td>
+                            <td>3</td>
+                            <td>Area 2
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 1</td>
+                            <td>Ward 2</td>
+                            <td>3</td>
+                            <td>Area 3
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 2</td>
+                            <td>Ward 1</td>
+                            <td>3</td>
+                            <td>Area 1
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 2</td>
+                            <td>Ward 1</td>
+                            <td>3</td>
+                            <td>Area 2
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 2</td>
+                            <td>Ward 1</td>
+                            <td>3</td>
+                            <td>Area 3
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 2</td>
+                            <td>Ward 2</td>
+                            <td>4</td>
+                            <td>Area 1
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 2</td>
+                            <td>Ward 2</td>
+                            <td>4</td>
+                            <td>Area 2
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 2</td>
+                            <td>Ward 2</td>
+                            <td>4</td>
+                            <td>Area 3
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Zone 2</td>
+                            <td>Ward 2</td>
+                            <td>4</td>
+                            <td>Area 4
+                                <div class="pull-right action-buttons">
+                                    <a href="#" class="code-fork"><em class="fa fa-code-fork"></em></a>
+                                    <a href="#" class="edit"><em class="fa fa-edit"></em></a>
+                                    <a href="#" class="trash"><em class="fa fa-trash"></em></a>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>Zone Name</th>
+                            <th>Ward Number</th>
+                            <th>Number of Areas</th>
+                            <th>Area Name</th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+            </div>
+
+        </div><!-- /.col-->
+    </div><!-- /.row -->
+</div><!--/.main-->
+
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/chart.min.js"></script>
+<script src="js/chart-data.js"></script>
+<script src="js/easypiechart.js"></script>
+<script src="js/easypiechart-data.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/custom.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+
+
+<script>
+    w3IncludeHTML();
+</script>
+</body>
+</html>

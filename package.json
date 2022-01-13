@@ -1,0 +1,12 @@
+{
+  "name": "gazipur_city_corporation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass sass/styles.scss css/styles.css"
+  },
+  "author": "",
+  "license": "ISC"
+}
