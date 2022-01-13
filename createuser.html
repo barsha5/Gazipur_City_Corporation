@@ -13,6 +13,9 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap.min.css">
 
+    <link rel="stylesheet" href="css/phonezone/css/intlTelInput.css">
+
+
     <!--Custom Font-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <!--[if lt IE 9]>
@@ -64,67 +67,63 @@
                 <div class="panel-heading">
                     User Information
                     <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
-
-                <form class="form-horizontal" action="" method="post" style="margin: 1%;">
-                    <fieldset>
-                        <!-- Name input-->
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="name">Name</label>
-                            <div class="col-md-9">
-                                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+                <div class="panel-body">
+                    <form class="form-horizontal" action="" method="post" style="margin: 1%;">
+                        <fieldset>
+                            <!-- Name input-->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name">Name</label>
+                                <div class="col-md-9">
+                                    <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="nid">National ID</label>
-                            <div class="col-md-9">
-                                <input id="nid" name="nid" type="text" placeholder="NID No." class="form-control">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="nid">National ID</label>
+                                <div class="col-md-9">
+                                    <input id="nid" name="nid" type="text" placeholder="NID No." class="form-control">
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Email input-->
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="email">E-mail</label>
-                            <div class="col-md-9">
-                                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+                            <!-- Email input-->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="email">E-mail</label>
+                                <div class="col-md-9">
+                                    <input id="email" name="email" type="email" placeholder="Your email" class="form-control">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="name">Password</label>
-                            <div class="col-md-9">
-                                <input id="password" name="password" type="text" placeholder="Please enter password" class="form-control">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name">Password</label>
+                                <div class="col-md-9">
+                                    <input id="password" name="password" type="password" placeholder="Please enter password" class="form-control">
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="name">Re-enter Password</label>
-                            <div class="col-md-9">
-                                <input id="password" name="password" type="text" placeholder="re-enter password" class="form-control">
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name">Re-enter Password</label>
+                                <div class="col-md-9">
+                                    <input id="password" name="password" type="password" placeholder="re-enter password" class="form-control">
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Phone No. -->
-                        <div class="form-group">
-                            <label class="col-md-3 control-label" for="phone">Phone Number</label>
-                            <div class="col-md-9">
-                                <form>
-                                    <div class="input-group">
-                                        <input type="tel" class="form-control">
-                                        <span class="input-group-addon">Mobile</span>
-                                    </div>
-                                </form>
+                            <!-- Phone No. -->
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="telephone">Phone Number</label>
+                                <div class="col-md-9">
+                                    <input type="tel" class="form-control phone"  placeholder="e.g. 17XXXXXXXX" id="telephone">
+                                </div>
                             </div>
-                        </div>
 
-                        <!-- Form actions -->
-                        <div class="form-group">
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary btn-md pull-right">Create Account</button>
+                            <!-- Form actions -->
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary btn-md pull-right">Create Account</button>
+                                </div>
                             </div>
-                        </div>
-                    </fieldset>
-                </form>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
 
         </div><!-- /.col-->
@@ -162,11 +161,15 @@
 </script>
 
 <!--Phone number location -->
+<script src="css/phonezone/js/intlTelInput.min.js"></script>
 <script>
-    $("input").intlTelInput({
-        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js"
-    });
+    // Vanilla Javascript
+    var input = document.querySelector("#telephone");
+    window.intlTelInput(input,({
+        initialCountry:"BD",
+    }));
 </script>
+
 
 </body>
 </html>
