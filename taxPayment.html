@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tax Payment</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/phonezone/css/intlTelInput.css">
+
+
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div w3-include-html="navbar.html"></div>
+<div w3-include-html="sidebar.html"></div>
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#">
+                <em class="fa fa-home"></em>
+            </a></li>
+            <li class="active">Entry</li>
+            <li class="active">Tax Payment</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Tax Payment</h1>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Payment Details
+                    <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" action="" method="post" style="margin: 1%;">
+                        <fieldset>
+                            <!-- Name input-->
+
+                            <div class="form-group">
+                                <div class="col-md-5">
+                                    <select id="zname" class="selectpicker form-control" data-live-search="true">
+                                        <option>Zone</option>
+                                        <option>Zone 1</option>
+                                        <option>Zone 2</option>
+                                        <option>Zone 3</option>
+                                        <option>Zone 4</option>
+                                        <option>Zone 5</option>
+                                        <option>Zone 6</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-5">
+                                    <select id="collector" class="selectpicker form-control" data-live-search="true">
+                                        <option>Collector Name</option>
+                                        <option>MD. Mustafa</option>
+                                        <option>Yusuf Ali</option>
+                                        <option>Zakir Alam</option>
+                                        <option>Arshad Islam</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadioszone" value="zone" checked>Zone
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="optionsRadiosbank" value="bank">Bank
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <select id="ward" class="selectpicker form-control" data-live-search="true">
+                                        <option>Ward No.</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select id="area" class="selectpicker form-control" data-live-search="true">
+                                        <option>Area Name</option>
+                                        <option>Area 1</option>
+                                        <option>Area 2</option>
+                                        <option>Area 3</option>
+                                        <option>Area 4</option>
+                                        <option>Area 5</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-5">
+                                    <select id="bank" class="selectpicker form-control" data-live-search="true">
+                                        <option>Bank Name</option>
+                                        <option>Brac Bank Limited</option>
+                                        <option>Janata Bank</option>
+                                        <option>City Bank</option>
+                                        <option>NCC Bank</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-2">
+                                    <select id="road" class="selectpicker form-control" data-live-search="true">
+                                        <option>Road No.</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <select id="holding" class="selectpicker form-control" data-live-search="true">
+                                        <option>Holding/Flat No.</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-5">
+                                    <select id="branch" class="selectpicker form-control" data-live-search="true">
+                                        <option>Branch Name</option>
+                                        <option>Gazipur</option>
+                                        <option>Elephant Road</option>
+                                        <option>Dhanmondi</option>
+                                        <option>Gulshan</option>
+                                        <option>Banani</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <input id="owner" name="owner" type="text" placeholder="Holding Owner's Name" class="form-control">
+                                </div>
+                                <label class="col-md-2 control-label" for="challanNo">Challan No.</label>
+                                <div class="col-md-2">
+                                    <input id="challanNo" name="challanNo" type="number" placeholder="Challan No." class="form-control">
+                                </div>
+                                <label class="col-md-2 control-label" for="challanDate">Challan Date</label>
+                                <div class="col-md-2">
+                                    <input id="challanDate" name="challanDate" type="date" placeholder="Challan Date" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <input id="taxno" name="taxno" type="number" placeholder="Holding Tax Number" class="form-control">
+                                </div>
+                                <label class="col-md-2 control-label" for="slipNo">Slip No.</label>
+                                <div class="col-md-2">
+                                    <input id="slipNo" name="slipNo" type="number" placeholder="Slip No." class="form-control">
+                                </div>
+                                <label class="col-md-2 control-label" for="slipDate">Slip Date</label>
+                                <div class="col-md-2">
+                                    <input id="slipDate" name="slipDate" type="date" placeholder="Slip Date" class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- Form actions -->
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" for="financialStart">Financial Year Start</label>
+                                <div class="col-md-4">
+                                    <input class="form-control" type="date" id="financialStart" name="financialStart">
+                                </div>
+
+                                <label class="col-md-2 control-label" for="financialEnd">Financial Year End</label>
+                                <div class="col-md-4">
+                                    <input class="form-control" type="date" id="financialEnd" name="financialEnd">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Select Quarter</label>
+                                <div class="col-md-1">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter1" value="quarter1" checked>1st Quarter
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter2" value="quarter2">2nd Quarter
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter3" value="quarter2">3rd Quarter
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter4" value="quarter2">4th Quarter
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-primary btn-md pull-right">Process Payment</button>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+
+        </div><!-- /.col-->
+    </div><!-- /.row -->
+</div><!--/.main-->
+
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/chart.min.js"></script>
+<script src="js/chart-data.js"></script>
+<script src="js/easypiechart.js"></script>
+<script src="js/easypiechart-data.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/custom.js"></script>
+
+<!-- dropdown with search-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<!--data table-->
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+<!--data table-->
+
+<!--sidebar & navbar-->
+<script>
+    w3IncludeHTML();
+</script>
+
+<!--Phone number location -->
+<script src="css/phonezone/js/intlTelInput.min.js"></script>
+<script>
+    // Vanilla Javascript
+    var input = document.querySelector("#telephone");
+    window.intlTelInput(input,({
+        initialCountry:"BD",
+    }));
+</script>
+
+
+</body>
+</html>
