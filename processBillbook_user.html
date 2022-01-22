@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Holding Information</title>
+    <title>Process Bill Book</title>
     <link rel="icon" type="image/x-icon" href="img/logo.png">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 <body>
 
 <div w3-include-html="navbar.html"></div>
-<div w3-include-html="sidebar.html"></div>
+<div w3-include-html="sidebar_user.html"></div>
 
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
@@ -34,14 +34,14 @@
             <li><a href="#">
                 <em class="fa fa-home"></em>
             </a></li>
-            <li class="active">Entry</li>
-            <li class="active">Holding Information</li>
+            <li class="active">Process</li>
+            <li class="active">Process Bill Book</li>
         </ol>
     </div><!--/.row-->
 
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Add Holding Information</h1>
+            <h1 class="page-header">Process Bill Book</h1>
         </div>
     </div><!--/.row-->
 
@@ -51,11 +51,11 @@
 
 
             <div class="panel panel-default">
-                <div class="panel-heading">Search by Holding Tax Number</div>
+                <div class="panel-heading">Select Required Information</div>
                 <form class="form-inline text-center">
                     <div class="form-group" style="margin-bottom: 1%">
-                        <select class="selectpicker" data-live-search="true">
-                        <option>Search Holding Tax No.</option>
+                        <select class="selectpicker" id="holdingTaxNo" data-live-search="true"">
+                        <option>Holding Tax No.</option>
                         <option>2389723891273</option>
                         <option>2129481092809</option>
                         <option>3247471338783</option>
@@ -69,8 +69,18 @@
                         <option>2348749304889</option>
                         </select>
                     </div>
+                    <div class="form-group" style="margin-bottom: 1%">
+                        <select id="financialYear" class="selectpicker" data-live-search="true">
+                            <option>Financial Year</option>
+                            <option>2012/13</option>
+                            <option>2013/14</option>
+                            <option>2014/15</option>
+                            <option>2015/16</option>
+                            <option>2016/17</option>
+                        </select>
+                    </div>
                     <div class="form-group" style="margin-left: 8px;">
-                        <button style="margin-bottom: 1%" type="submit" class="btn btn-md btn-primary">Edit</button>
+                        <button style="margin-bottom: 1%" type="submit" class="btn btn-md btn-primary">Process</button>
                     </div>
                 </form>
             </div><!-- /.panel-->
@@ -78,22 +88,25 @@
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Add Holding Information
+                    Bill Book Information
                     <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
                 <div class="panel-body">
                     <form class="form-horizontal" action="" method="post" style="margin: 1%;">
                         <fieldset>
-                            <!-- Name input-->
+
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="zname">Zone</label>
+                                <label class="col-md-3 control-label" for="zone">Zone</label>
                                 <div class="col-md-9">
-                                    <select id="zname" class="selectpicker form-control" data-live-search="true">
-                                        <option>Zone 1</option>
-                                        <option>Zone 2</option>
-                                        <option>Zone 3</option>
-                                        <option>Zone 4</option>
-                                        <option>Zone 5</option>
-                                        <option>Zone 6</option>
+                                    <select class="selectpicker" id="zone" data-live-search="true"">
+                                    <option>Zone 1</option>
+                                    <option>Zone 2</option>
+                                    <option>Zone 3</option>
+                                    <option>Zone 4</option>
+                                    <option>Zone 5</option>
+                                    <option>Zone 6</option>
+                                    <option>Zone 7</option>
+                                    <option>Zone 8</option>
+                                    <option>Zone 9</option>
                                     </select>
                                 </div>
                             </div>
@@ -140,105 +153,129 @@
                             <div class="form-group">
                                 <label class="col-md-3 control-label" for="holdingno">Holding Number</label>
                                 <div class="col-md-9">
-                                    <input id="holdingno" name="holdingno" type="number" placeholder="Holding Number" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="flatno">Flat Number</label>
-                                <div class="col-md-9">
-                                    <input id="flatno" name="flatno" type="number" placeholder="Flat Number" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="room">Number of Rooms</label>
-                                <div class="col-md-9">
-                                    <input id="room" name="room" type="number" placeholder="Number of Rooms" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="esdate">Holding Establishment Date</label>
-                                <div class="col-md-9">
-                                    <input id="esdate" name="esdate" type="date" placeholder="Holding Establishment Date" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="taxno">Holding Tax Number</label>
-                                <div class="col-md-9">
-                                    <input id="taxno" name="taxno" type="number" placeholder="Holding Tax Number" class="form-control">
+                                    <select id="holdingno" class="selectpicker form-control" data-live-search="true">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
                                 </div>
                             </div>
 
 
-                            <!-- Email input-->
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="name">Holding Owner Name</label>
-                                <div class="col-md-9">
-                                    <input id="name" name="name" type="text" placeholder="Holding Owner Name" class="form-control">
-                                </div>
-                            </div>
-
-                            <!-- Phone No. -->
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="yearlyvaluation">Yearly Valuation</label>
-                                <div class="col-md-9">
-                                    <input id="yearlyvaluation" onkeyup="taxCalculation()" type="number" step="any" class="form-control" placeholder="Yearly Valuation">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-3 control-label" for="quartervaluation">Quarter Valuation</label>
-                                <div class="col-md-9">
-                                    <input id="quartervaluation" type="number" step="any" class="form-control" placeholder="Quarter Valuation">
-                                </div>
-                            </div>
-
-                            <div class="form-group"></div>
-
-                            <div class="form-group">
-                                <label class="col-md-2 control-label" for="holdingtax">Holding Tax</label>
+                                <label class="col-md-3 control-label" >Payment Type</label>
                                 <div class="col-md-2">
-                                    <input id="holdingtax" type="number" step="any" class="form-control" placeholder="Holding Tax">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="allPayment" value="allPayment" checked>All
+                                        </label>
+                                    </div>
                                 </div>
-                                <label class="col-md-2 control-label" for="cleaningtax">Cleaning Tax</label>
                                 <div class="col-md-2">
-                                    <input id="cleaningtax" type="number" step="any" class="form-control" placeholder="Cleaning Tax">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="installmentPay" value="installmentPay">Installment
+                                        </label>
+                                    </div>
                                 </div>
-                                <label class="col-md-2 control-label" for="electricitytax">Electricity Tax</label>
                                 <div class="col-md-2">
-                                    <input id="electricitytax" type="number" step="any" class="form-control" placeholder="Electricity Tax">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="duePayment" value="duePayment">Due
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="col-md-2 control-label" for="installmentTotal">Quarterly Tax</label>
-                                <div class="col-md-4">
-                                    <input id="installmentTotal" type="number" step="any" class="form-control" placeholder="Yearly Tax">
+                                <label class="col-md-3 control-label">Select Quarter</label>
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter1" value="quarter1" checked>1st Quarter
+                                        </label>
+                                    </div>
                                 </div>
-                                <label class="col-md-2 control-label" for="yearTotal">Year Total Tax</label>
-                                <div class="col-md-4">
-                                    <input id="yearTotal" type="number" step="any" class="form-control" placeholder="Year Total Tax">
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter2" value="quarter2">2nd Quarter
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter3" value="quarter2">3rd Quarter
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter4" value="quarter2">4th Quarter
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Form actions -->
+                            <!--div class="form-group">
+                                <div class="col-md-12">
+                                  <button type="submit" class="btn btn-primary btn-md pull-right">Generate Bill Book</button>
+                                </div>
+                            </div-->
+
+
+                            <!-- Form actions -->
+                            <!-- Button trigger modal -->
                             <div class="form-group">
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary btn-md pull-right">Save</button>
+                                    <button type="button" class="btn btn-primary btn-md pull-right" data-toggle="modal" data-target="#exampleModal">
+                                        Show Bill Book
+                                    </button>
                                 </div>
                             </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Bill Book</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="img/bill.jpeg" width="100%" >
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <a href="img/bill.jpeg" download> <button type="button" class="btn btn-primary">Download Bill Book</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </fieldset>
                     </form>
+
+
+
+
+
+
+
                 </div>
             </div>
 
         </div><!-- /.col-->
     </div><!-- /.row -->
 </div><!--/.main-->
+
 
 <script src="http://www.w3schools.com/lib/w3data.js"></script>
 <script src="js/jquery-1.11.1.min.js"></script>
@@ -270,15 +307,15 @@
     w3IncludeHTML();
 </script>
 
+
 <script>
+
     function percentage(percent, total) {
         return ((percent/ 100) * total).toFixed(2)
     }
 
     function taxCalculation() {
-        let bla = document.getElementById('yearlyvaluation').value /4
-
-        document.getElementById("quartervaluation").value = bla;
+        let bla = document.getElementById('yearlyvaluation').value
 
         document.getElementById("holdingtax").value = percentage(7, bla);
         document.getElementById("cleaningtax").value = percentage(2, bla);
