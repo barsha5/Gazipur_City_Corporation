@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Process Bill Book</title>
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/phonezone/css/intlTelInput.css">
+
+
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div w3-include-html="navbar.html"></div>
+<div w3-include-html="sidebar.html"></div>
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#">
+                <em class="fa fa-home"></em>
+            </a></li>
+            <li class="active">Process</li>
+            <li class="active">Process Bill Book</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Process Bill Book</h1>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Select Required Information</div>
+                <form class="form-inline text-center">
+                    <div class="form-group" style="margin-bottom: 1%">
+                        <select class="selectpicker" id="holdingTaxNo" data-live-search="true"">
+                        <option>Holding Tax No.</option>
+                        <option>2389723891273</option>
+                        <option>2129481092809</option>
+                        <option>3247471338783</option>
+                        <option>3499310300101</option>
+                        <option>3493018134982</option>
+                        <option>2430891098091</option>
+                        <option>3403993103304</option>
+                        <option>4109849184899</option>
+                        <option>4104801949410</option>
+                        <option>4130948093848</option>
+                        <option>2348749304889</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1%">
+                        <select id="financialYear" class="selectpicker" data-live-search="true">
+                            <option>Financial Year</option>
+                            <option>2012/13</option>
+                            <option>2013/14</option>
+                            <option>2014/15</option>
+                            <option>2015/16</option>
+                            <option>2016/17</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="margin-left: 8px;">
+                        <button style="margin-bottom: 1%" type="submit" class="btn btn-md btn-primary">Process</button>
+                    </div>
+                </form>
+            </div><!-- /.panel-->
+
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Bill Book Information
+                    <span class="pull-right clickable panel-toggle panel-button-tab-left"><em class="fa fa-toggle-up"></em></span></div>
+                <div class="panel-body">
+                    <form class="form-horizontal" action="" method="post" style="margin: 1%;">
+                        <fieldset>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="name">Holding Owner Name</label>
+                                <div class="col-md-9">
+                                    <input id="name" name="name" type="text" placeholder="Holding Owner Name" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="zone">Zone</label>
+                                <div class="col-md-9">
+                                    <select class="selectpicker" id="zone" data-live-search="true"">
+                                    <option>Zone 1</option>
+                                    <option>Zone 2</option>
+                                    <option>Zone 3</option>
+                                    <option>Zone 4</option>
+                                    <option>Zone 5</option>
+                                    <option>Zone 6</option>
+                                    <option>Zone 7</option>
+                                    <option>Zone 8</option>
+                                    <option>Zone 9</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="ward">Ward Number</label>
+                                <div class="col-md-9">
+                                    <select id="ward" class="selectpicker form-control" data-live-search="true">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="area">Area</label>
+                                <div class="col-md-9">
+                                    <select id="area" class="selectpicker form-control" data-live-search="true">
+                                        <option>Area 1</option>
+                                        <option>Area 2</option>
+                                        <option>Area 3</option>
+                                        <option>Area 4</option>
+                                        <option>Area 5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="road">Road No.</label>
+                                <div class="col-md-9">
+                                    <select id="road" class="selectpicker form-control" data-live-search="true">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="holdingno">Holding Number</label>
+                                <div class="col-md-9">
+                                    <select id="holdingno" class="selectpicker form-control" data-live-search="true">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" >Payment Type</label>
+                                <div class="col-md-2">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="allPayment" value="allPayment" checked>All
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="installmentPay" value="installmentPay">Installment
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optionsRadios" id="duePayment" value="duePayment">Due
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Select Quarter</label>
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter1" value="quarter1" checked>1st Quarter
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter2" value="quarter2">2nd Quarter
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter3" value="quarter2">3rd Quarter
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="optionsRadios" id="quarter4" value="quarter2">4th Quarter
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Form actions -->
+                            <!--div class="form-group">
+                                <div class="col-md-12">
+                                  <button type="submit" class="btn btn-primary btn-md pull-right">Generate Bill Book</button>
+                                </div>
+                            </div-->
+
+
+                            <!-- Form actions -->
+                            <!-- Button trigger modal -->
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <button type="button" class="btn btn-primary btn-md pull-right" data-toggle="modal" data-target="#exampleModal">
+                                        Show Bill Book
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Bill Book</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <img src="img/bill.jpeg" width="100%" >
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <a href="img/bill.jpeg" download> <button type="button" class="btn btn-primary">Download Bill Book</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </form>
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+        </div><!-- /.col-->
+    </div><!-- /.row -->
+</div><!--/.main-->
+
+
+<script src="http://www.w3schools.com/lib/w3data.js"></script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/chart.min.js"></script>
+<script src="js/chart-data.js"></script>
+<script src="js/easypiechart.js"></script>
+<script src="js/easypiechart-data.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/custom.js"></script>
+
+<!-- dropdown with search-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+<!--data table-->
+<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+<!--data table-->
+
+<!--sidebar & navbar-->
+<script>
+    w3IncludeHTML();
+</script>
+
+
+<script>
+
+    function percentage(percent, total) {
+        return ((percent/ 100) * total).toFixed(2)
+    }
+
+    function taxCalculation() {
+        let bla = document.getElementById('yearlyvaluation').value
+
+        document.getElementById("holdingtax").value = percentage(7, bla);
+        document.getElementById("cleaningtax").value = percentage(2, bla);
+        document.getElementById("electricitytax").value = percentage(3, bla);
+        document.getElementById("installmentTotal").value = percentage(12, bla);
+        document.getElementById("yearTotal").value = document.getElementById("installmentTotal").value*4;
+    }
+</script>
+
+
+</body>
+</html>
